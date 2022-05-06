@@ -77,3 +77,10 @@ def test_registration_form_successful_register(client):
     response = client.get("/register")
     if User is None:
         assert 'Congratulations, you are now a registered user!' in response.data
+
+
+def test_dashboard_denial_of_access(client):
+    """ Unit Test for Denying Access to Dashboard"""
+    response = client.get("/dashboard")
+    if not User.authenticated:
+        assert 'User Not Authenticated' in response.data
