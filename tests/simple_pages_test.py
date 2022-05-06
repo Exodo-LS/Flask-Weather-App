@@ -24,3 +24,9 @@ def test_about_page_exists(client):
     assert b"About" in response.data
 
 
+def test_welcome_page_exists(client):
+    """This validates the welcome page"""
+    response = client.get("/welcome")
+    assert response.status_code == 200
+    assert b"welcome" in response.data
+
