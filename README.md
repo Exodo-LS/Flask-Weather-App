@@ -8,3 +8,5 @@
 
 * [Developmental Deployment](https://ma2298-dev.herokuapp.com/)
 
+# Pytest:
+### tests project/tests/database_validation_test.py: 1 Test
