@@ -24,8 +24,6 @@ class User(UserMixin, db.Model):
     registered_on = db.Column('registered_on', db.DateTime)
     active = db.Column('is_active', db.Boolean(), nullable=False, server_default='1')
     is_admin = db.Column('is_admin', db.Boolean(), nullable=False, server_default='0')
-    locations = db.relationship("Location",
-                                secondary=location_user, backref="users")
 
     def __init__(self, email, password, is_admin):
         self.email = email
