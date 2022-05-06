@@ -10,7 +10,6 @@
 
 # Pytest:
 ### project/tests/auth_test.py:
-### project/tests/conftest.py:
 ### project/tests/context_process_test.py:
 ### project/tests/database_validation_test.py: 1 Test
 ### project/tests/environment_variable_test.py:

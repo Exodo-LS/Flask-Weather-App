@@ -30,7 +30,7 @@ def application():
 
 
 @pytest.fixture()
-def test_add_user(application):
+def add_user(application):
     """This tests the add user to database"""
     with application.app_context():
         # new record
@@ -40,12 +40,12 @@ def test_add_user(application):
 
 
 @pytest.fixture()
-def test_client(application):
+def client(application):
     """This tests the http client"""
     return application.test_client()
 
 
 @pytest.fixture()
-def test_runner(application):
+def runner(application):
     """This tests the task runner"""
     return application.test_cli_runner()
