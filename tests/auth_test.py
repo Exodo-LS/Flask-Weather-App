@@ -84,3 +84,13 @@ def test_dashboard_denial_of_access(client):
     response = client.get("/dashboard")
     if not User.authenticated:
         assert 'User Not Authenticated' in response.data
+
+
+def test_dashboard_allow_access(client):
+    """ Unit Test for Allowing Access to Dashboard"""
+    response = client.get("/dashboard")
+    test_user = 'IS219_TestUser@email.com'
+    test_password = 'Dummy_Pass_123'
+    if User.email == test_user and User.password == test_password:
+        if User.authenticated:
+            assert 'User Authenticated' in response.data
