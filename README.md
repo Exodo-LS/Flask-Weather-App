@@ -9,4 +9,10 @@
 * [Developmental Deployment](https://ma2298-dev.herokuapp.com/)
 
 # Pytest:
-### tests project/tests/database_validation_test.py: 1 Test
+### project/tests/auth_test.py:
+### project/tests/configuration_setup_test.py:
+### project/tests/context_process_test.py:
+### project/tests/database_validation_test.py: 1 Test
+### project/tests/environment_variable_test.py:
+### project/tests/simple_pages_test.py:
+## Total Tests:
