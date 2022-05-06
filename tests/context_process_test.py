@@ -23,7 +23,7 @@ def test_context_variables_copyright(client):
 
 
 def test_context_variables_year(client):
-    """This tests checks if the copyright is printed"""
+    """This tests checks if the year is printed"""
     response = client.get("/")
     current_date_time = datetime.datetime.now()
     date = current_date_time.date()
@@ -33,3 +33,11 @@ def test_context_variables_year(client):
     assert response.status_code == 200
     assert content in response.data
 
+
+def test_context_variables_currency_format(client):
+    """This tests checks if the copyright and current year are printed"""
+    response = client.get("/")
+    test_string = f"$100"
+    content = bytes(test_string, 'utf-8')
+    assert response.status_code == 200
+    assert content in response.data
