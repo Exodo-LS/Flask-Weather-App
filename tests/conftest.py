@@ -37,3 +37,9 @@ def test_add_user(application):
         user = User('test_user@test.com', 'testtest')
         db.session.add(user)
         db.session.commit()
+
+
+@pytest.fixture()
+def test_client(application):
+    """This tests the http client"""
+    return application.test_client()
