@@ -10,5 +10,28 @@ def test_nav_bar_simple_pages_links(client):
     assert b'href="/welcome"' in response.data
 
 
+def test_index_page_exists(client):
+    """This validates the index page"""
+    response = client.get("/")
+    assert response.status_code == 200
+    assert b"Index" in response.data
 
 
+def test_about_page_exists(client):
+    """This validates the about page"""
+    response = client.get("/about")
+    assert response.status_code == 200
+    assert b"About" in response.data
+
+
+def test_welcome_page_exists(client):
+    """This validates the welcome page"""
+    response = client.get("/welcome")
+    assert response.status_code == 200
+    assert b"welcome" in response.data
+
+
+def test_error_404_page_exists(client):
+    """This validates that a 404 page exists"""
+    response = client.get("/error")
+    assert response.status_code == 404
