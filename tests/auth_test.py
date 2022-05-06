@@ -70,3 +70,10 @@ def test_registration_form_already_registered(client):
     test_user = 'IS219_TestUser@email.com'
     if User.email is not None and User.email == test_user:
         assert 'Already Registered' in response.data
+
+
+def test_registration_form_successful_register(client):
+    """ Unit Test for Successful Registration"""
+    response = client.get("/register")
+    if User is None:
+        assert 'Congratulations, you are now a registered user!' in response.data
