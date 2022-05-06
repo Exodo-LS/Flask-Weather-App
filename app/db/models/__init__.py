@@ -14,35 +14,6 @@ from sqlalchemy_serializer import SerializerMixin
 
 Base = declarative_base()
 
-location_user = db.Table('location_user', db.Model.metadata,
-                         db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
-                         db.Column('location_id', db.Integer, db.ForeignKey('locations.id'))
-                         )
-
-
-class Location(db.Model, SerializerMixin):
-    __tablename__ = 'locations'
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(300), nullable=True, unique=False)
-    longitude = db.Column(db.String(300), nullable=True, unique=False)
-    latitude = db.Column(db.String(300), nullable=True, unique=False)
-    population = db.Column(db.Integer, nullable=True, unique=False)
-
-    def __init__(self, title, longitude, latitude, population):
-        self.title = title
-        self.longitude = longitude
-        self.latitude = latitude
-        self.population = population
-
-    def serialize(self):
-        return {
-            'title': self.title,
-            'long': self.longitude,
-            'lat': self.latitude,
-            'population': self.population,
-        }
-
-
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
