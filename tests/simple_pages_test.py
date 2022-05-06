@@ -17,4 +17,10 @@ def test_index_page_exists(client):
     assert b"Index" in response.data
 
 
+def test_about_page_exists(client):
+    """This validates the about page"""
+    response = client.get("/about")
+    assert response.status_code == 200
+    assert b"About" in response.data
+
 
