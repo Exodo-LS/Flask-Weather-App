@@ -19,3 +19,8 @@ def test_environment_variable_testing(application):
     assert not application.config['PRESERVE_CONTEXT_ON_EXCEPTION']
     assert application.config['SQLALCHEMY_DATABASE_URI'] == 'sqlite:///:memory:'
 
+
+def test_environment_variable_production(application):
+    application.config.from_object('app.config.ProductionConfig')
+    assert not application.config['DEBUG']
+    assert not application.config['TESTING']
