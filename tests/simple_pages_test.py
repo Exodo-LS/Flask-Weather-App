@@ -30,3 +30,8 @@ def test_welcome_page_exists(client):
     assert response.status_code == 200
     assert b"welcome" in response.data
 
+
+def test_error_404_page_exists(client):
+    """This validates that a 404 page exists"""
+    response = client.get("/error")
+    assert response.status_code == 404
