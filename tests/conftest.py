@@ -43,3 +43,9 @@ def test_add_user(application):
 def test_client(application):
     """This tests the http client"""
     return application.test_client()
+
+
+@pytest.fixture()
+def test_runner(application):
+    """This tests the task runner"""
+    return application.test_cli_runner()
