@@ -22,7 +22,7 @@ def test_templates_in_auth_directory(client):
 
 
 def test_login_form(client):
-    """ Unit Test for Incorrect Password for Login """
+    """ Unit Test for Login """
     response = client.post("/login")
     test_user = 'IS219_TestUser@email.com'
     test_password = 'invalid_password'
@@ -33,3 +33,13 @@ def test_login_form(client):
             assert 'Login Successful' in response.data
     elif User.email is None:
         assert 'Invalid username' in response.data
+
+
+def test_invalid_registration_form_email(client):
+    """ Unit Test for Invalid Email for Registration"""
+    response = client.post("/register")
+    test_email = 'test'
+    if User.email is None:
+        User.email = test_email
+        if '@' not in User.email:
+            assert 'Please include an ' @ ' in the email address' in response.data
