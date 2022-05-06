@@ -7,7 +7,7 @@ class Config(object):
     TESTING = False
     SECRET_KEY = 'This is an INSECURE secret!! DO NOT use this in production!!'
     SESSION_COOKIE_SECURE = True
-    BOOTSTRAP_BOOTSWATCH_THEME = 'Morph'
+    BOOTSTRAP_BOOTSWATCH_THEME = 'Lux'
     DB_DIR = os.getenv('DB_DIR', 'database')
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(BASE_DIR, '..', DB_DIR, "db2.sqlite")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
