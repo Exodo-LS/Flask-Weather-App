@@ -25,5 +25,9 @@ the forecast with additional details, the icon for the weather,
 humidity, wind speed, and coordinates. 
 I do plan to add more functionality to this application.
 ```
-# Image of Weather App
+# Image of Weather App:
+### Weather App Form:
+![Weather Form](app/static/images/weather_form.png)
+### Weather App Result:
+![Weather Result](app/static/images/weather_result.png)
 ENJOY!!
