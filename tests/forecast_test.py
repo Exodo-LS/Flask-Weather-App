@@ -1,4 +1,4 @@
-# project/tests/simple_pages_test.py
+# project/tests/forecast_test.py
 from app.db.models import User
 """This tests the forecast pages"""
 
