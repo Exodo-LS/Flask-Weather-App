@@ -16,8 +16,18 @@
 ## Total Tests: 25 Tests
 
 # Purpose:
+```
 This application serves as a repurposed weather app I built in IT 202.  
 I converted the app from PHP to Python.  
-The user is able to input a city name and is given temperature, humidity, wind speed, latitude, and longitude.  
-I do plan to add more functionality to this application.  
+The user is able to input a city name.  
+The user is given the temperature, what it feels like, 
+the forecast with additional details, the icon for the weather,
+humidity, wind speed, and coordinates. 
+I do plan to add more functionality to this application.
+```
+# Image of Weather App:
+### Weather App Form:
+![Weather Form](app/static/images/weather_form.png)
+### Weather App Result:
+![Weather Result](app/static/images/weather_result.png)
 ENJOY!!
