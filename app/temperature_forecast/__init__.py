@@ -17,16 +17,20 @@ def get_temperature():
             city = request.form['city']
             api_key = current_app.config.get('OPENWEATHER_API_KEY')
 
-            weather_url = requests.get(f'http://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city},&units=imperial')
-            weather_data = weather_url.json()
+            weather_url = f'http://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city},&units=imperial'
+            weather_data = requests.get(weather_url).json()
+            print(weather_data)
+            temp = weather_data.get('main', {}).get('temp')
+            feel = weather_data.get('main', {}).get('feels_like')
+            cast = weather_data.get('weather')[0].get('main')
+            desc = weather_data.get('weather')[0].get('description')
+            icon = weather_data.get('weather')[0].get('icon')
+            humidity = weather_data.get('main', {}).get('humidity')
+            wind_speed = weather_data.get('wind', {}).get('speed')
+            lat = weather_data.get('coord', {}).get('lat')
+            lon = weather_data.get('coord', {}).get('lon')
 
-            temp = weather_data['main']['temp']
-            humidity = weather_data['main']['humidity']
-            wind_speed = weather_data['wind']['speed']
-            lat = weather_data['coord']['lat']
-            lon = weather_data['coord']['lon']
-
-            return render_template('result.html', temp=temp, humidity=humidity, wind_speed=wind_speed, lat=lat, lon=lon, city=city)
+            return render_template('result.html', temp=temp, feel=feel, cast=cast, desc=desc, icon=icon, humidity=humidity, wind_speed=wind_speed, lat=lat, lon=lon, city=city)
     try:
         return render_template('temperature_forecast.html', form=form)
     except TemplateNotFound:
