@@ -13,4 +13,11 @@
 ### project/tests/environment_variable_test.py: 3 Tests
 ### project/tests/simple_pages_test.py: 2 Tests
 ### project/tests/simple_pages_test.py: 5 Tests
-## Total Tests: 25 Test
+## Total Tests: 25 Tests
+
+# Purpose:
+This application serves as a repurposed weather app I built in IT 202.  
+I converted the app from PHP to Python.  
+The user is able to input a city name and is given temperature, humidity, wind speed, latitude, and longitude.  
+I do plan to add more functionality to this application.  
+ENJOY!!
