@@ -1,11 +1,8 @@
 {% extends "base.html" %}
-{% from 'bootstrap5/table.html' import render_table %}
-{% from "bootstrap5/pagination.html" import render_pagination %}
-
-
-<div class="row col-8">
-    {% block title %}Welcome: {{ current_user.email }}{% endblock %}
-    {% block content %}
-        <h2>Welcome: {{ current_user.email }}</h2>
-    {% endblock %}
-</div>
+{% block content %}
+    {% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
+    <div id="row">
+    <h2>Dashboard</h2>
+    <p>Welcome: {{ current_user.email }}</p>
+    </div>
+{% endblock %}

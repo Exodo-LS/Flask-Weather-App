@@ -14,6 +14,7 @@ from sqlalchemy_serializer import SerializerMixin
 
 Base = declarative_base()
 
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
