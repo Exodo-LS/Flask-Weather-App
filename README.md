@@ -11,6 +11,6 @@
 ### project/tests/context_process_test.py: 4 Tests
 ### project/tests/database_validation_test.py: 1 Test
 ### project/tests/environment_variable_test.py: 3 Tests
-### project/tests/simple_pages_test.py: 1 Test
+### project/tests/simple_pages_test.py: 2 Tests
 ### project/tests/simple_pages_test.py: 5 Tests
-## Total Tests:
+## Total Tests: 25 Test
