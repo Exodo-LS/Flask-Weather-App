@@ -8,7 +8,7 @@ from flask_login import login_required
 forecast = Blueprint('forecast', __name__, template_folder='templates')
 
 
-@forecast.route('/temperature_forecast', methods=['POST'])
+@forecast.route('/temperature_forecast', methods=['GET', 'POST'])
 @login_required
 def get_temperature():
     form = weather_form()

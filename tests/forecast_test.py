@@ -6,7 +6,7 @@ from app.db.models import User
 def test_forecast_page_exists(client):
     """This validates the forecast page"""
     response = client.get("/temperature_forecast")
-    assert response.status_code == 405
+    assert response.status_code == 302
 
 
 def test_forecast_page_access(client):
